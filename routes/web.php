@@ -24,6 +24,8 @@ Route::get('/', function () {
     return view('index');
 });*/
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('phones', [PhoneController::class, 'index']);
-Route::get('posts', [PostController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('phones', [PhoneController::class, 'index'])->name('phones');
+Route::get('posts', [PostController::class, 'index'])->name('posts');
+Route::get('action', [PostController::class, 'indexAction'])->name('action');
+Route::post('action/create', [PostController::class, 'create'])->name('action-create');

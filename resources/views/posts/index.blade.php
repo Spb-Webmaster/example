@@ -1,4 +1,7 @@
 @extends('layouts.layout')
+@section('home-active', '')
+@section('phones-active', '')
+@section('posts-active', 'axeld_active')
 
 @section('content')
 
@@ -24,7 +27,7 @@
                                     {{ $post->title  }}
                             </h3>
                             <div class="text-gray-600 mb-8">
-                                {{ $post->content  }}
+                                {!! $post->content !!}
                             </div>
 
                         </div>
@@ -50,7 +53,7 @@
                                         {{ $post->title  }}
                                     </h3>
                                     <div class="text-gray-600 mb-8">
-                                        {{ $post->content  }}
+                                        {!!$post->content !!}
                                     </div>
                                 </div>
 

@@ -1,4 +1,8 @@
 @extends('layouts.layout')
+@section('home-active', '')
+@section('phones-active', 'axeld_active')
+@section('posts-active', '')
+
 @section('content')
 
     <x-top-img />
