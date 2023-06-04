@@ -7,17 +7,13 @@ use App\Models\Post;
 class PostsService
 {
 
-    public function createNewPost($request){
+    public function createNewPost($post){
 
      //   dd($request);
 
         // нужно проверить request
 
-        return (new Post())->create([
-            'title' => $request->get('title'),
-            'content' => $request->get('content'),
-            'img' => $request->get('img'),
-        ]);
+        return Post::createPost($post);
 
     }
 }

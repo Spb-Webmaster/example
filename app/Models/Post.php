@@ -21,7 +21,14 @@ class Post extends Model
         'img'
     ];
 
-
+    public static function createPost($post)
+    {
+        return (new self())->create([
+            'title' => $post['title'],
+            'content' => $post['content'] ?? null,
+            'img' => $post['img'] ?? null,
+        ]);
+    }
 
 
 }

@@ -1,8 +1,4 @@
 @extends('layouts.layout')
-@section('home-active', '')
-@section('phones-active', '')
-@section('posts-active', 'axeld_active')
-
 @section('content')
 
     <x-top-img />
@@ -24,11 +20,15 @@
                         <div class="w-5/6 sm:w-1/2 p-6">
 
                             <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                                    {{ $post->title  }}
+                                <a href="{{ route('post-show', $post->id) }}"> {{ $post->title  }} </a>
                             </h3>
                             <div class="text-gray-600 mb-8">
                                 {!! $post->content !!}
                             </div>
+                            <div class="mb-8">
+                                <a class="text-rose-950 decoration-1 underline hover:decoration-blue-400 hover:text-blue-400" href="{{ route('post-show', $post->id) }}">Подробнее</a>
+                            </div>
+
 
                         </div>
 
@@ -50,11 +50,15 @@
 
                                 <div class="align-middle">
                                     <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                                        {{ $post->title  }}
+                                        <a href="{{ route('post-show', $post->id) }}"> {{ $post->title  }} </a>
                                     </h3>
                                     <div class="text-gray-600 mb-8">
                                         {!!$post->content !!}
                                     </div>
+                                    <div class="mb-8">
+                                        <a class="text-rose-950 decoration-1 underline hover:decoration-blue-400 hover:text-blue-400" href="{{ route('post-show', $post->id) }}">Подробнее</a>
+                                    </div>
+
                                 </div>
 
                             </div>

@@ -1,7 +1,4 @@
 @extends('layouts.layout')
-@section('home-active', 'axeld_active')
-@section('phones-active', '')
-@section('posts-active', '')
 @section('content')
 
     <div class="pt-24 axeld_home">

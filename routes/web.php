@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
 /*
 Route::get('/', function () {
     return view('index');
@@ -27,5 +28,14 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('phones', [PhoneController::class, 'index'])->name('phones');
 Route::get('posts', [PostController::class, 'index'])->name('posts');
-Route::get('action', [PostController::class, 'indexAction'])->name('action');
-Route::post('action/create', [PostController::class, 'create'])->name('action-create');
+
+
+Route::get('admin/create-page', [PostController::class, 'createAction'])->name('action-create-page');
+Route::get('admin/update-page/{id}', [PostController::class, 'updateAction'])->name('action-update-page');
+
+
+Route::post('admin/create', [PostController::class, 'create'])->name('action-create');
+Route::post('admin/update', [PostController::class, 'update'])->name('action-update');
+
+
+Route::get('posts/{id}', [PostController::class, 'show'])->name('post-show');
