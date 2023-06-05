@@ -7,13 +7,13 @@ use App\Models\Post;
 class PostsService
 {
 
-    public function createNewPost($post){
+    public function createNewPost($post, $filePath){
 
      //   dd($request);
 
         // нужно проверить request
 
-        return Post::createPost($post);
+        return Post::createPost($post, $filePath);
 
     }
 }

@@ -10,7 +10,7 @@
             <div class="w-full mb-4">
                 <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
-            <x-form action="{{ route('action-create') }}" method="POST">
+            <x-form action="{{ route('action-create') }}" enctype="multipart/form-data" method="POST">
 
                 <div
                     class="bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">

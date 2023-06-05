@@ -6,15 +6,22 @@ use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Services\PostsService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
     public function index()
     {
         $posts = Post::all();
+        $file = Post::findOrFail(19);
+//        foreach ($posts as $post) {
+//            $post->img = Storage::get($post->img) ?? null;
+//            $post->save();
+//        }
 
         return view('posts/index', [
-            'posts' => $posts
+            'posts' => $posts,
+            'file' => $file
         ]);
     }
 
@@ -45,8 +52,10 @@ class PostController extends Controller
 
     public function create(PostRequest $request)
     {
+        $file = $request->file('file-input');
+        $filePath = $file->store('files');
         $postService = new PostsService();
-        $service = $postService->createNewPost($request->validated());
+        $service = $postService->createNewPost($request->validated(), $filePath);
 
         return redirect()->route('posts');
 

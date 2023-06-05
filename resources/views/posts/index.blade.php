@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="w-full sm:w-1/2 p-6">
-                            <img src="{{ $post->img  }}" alt="">
+                            <img src="{{ \Illuminate\Support\Facades\Storage::disk('files')->get($file) }}" alt="">
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@
 
                         <div class="flex flex-wrap flex-col-reverse sm:flex-row">
                             <div class="w-full sm:w-1/2 p-6 mt-6">
-                                <img src="{{ $post->img  }}" alt="">
+                                <img src="{{ \Illuminate\Support\Facades\Storage::disk('files')->get($file) }}" alt="">
 
                             </div>
                             <div class="w-full sm:w-1/2 p-6 mt-6">

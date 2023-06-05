@@ -25,7 +25,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'content' => 'string',
-            'img' => 'string'
+            'file-input' => 'file'
         ];
     }
 }
